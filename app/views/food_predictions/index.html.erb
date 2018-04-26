@@ -1,0 +1,23 @@
+<h1>""</h1>
+<% if logged_in? %>
+  <%= link_to 'Let\'s predict food ', new_food_prediction_path, :class=>"nav navbar-nav navbar-right" %>
+  <h1>Prediction made was</h1>
+    <table class="table table-hover table-responsive-md table-bordered">
+      <tr>
+        <th>Table</th>
+      </tr>
+      <tr>
+        <td><%= "Prediction" %></td>
+        <td><%= "Food Name" %></td>
+      </tr>
+      <% @all_orders.each do |order| %>
+        <tr>
+          <td><%= order.prediction rescue "not available" %></td>
+          <td><%= order.food.name rescue "not available" %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= button_to "Report Download", '/food_predictions/report',method: :post, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-rounded btn-sm my-0" %>
+<% else %>
+    <h1>Please log in</h1>
+<% end %>

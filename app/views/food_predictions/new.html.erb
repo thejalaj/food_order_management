@@ -1,0 +1,14 @@
+<h1>""</h1>
+<%= form_with scope: :food_predictions, local: true do |form| %>
+  <p>
+    <%= form.label :food_number %><br>
+    <%= form.collection_select :food_id, Food.all,:id, :name %>
+  </p>
+  <p>
+    <%= form.label :prediction %><br>
+    <%= form.text_field :prediction %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

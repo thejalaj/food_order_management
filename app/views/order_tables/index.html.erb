@@ -1,0 +1,31 @@
+<h1>""</h1>
+<% if logged_in? %>
+<%= link_to 'Create New order', new_order_table_path, :class=>"nav navbar-nav navbar-right" %>
+  <h1>Listing order for present kitchen</h1>
+   <h2>Table</h2>
+    <table class="table table-responsive">
+      <tr>
+        <td>Dish Name</td>
+        <td>Dish quantity</td>
+        <td>Curent quantity</td>
+        <td>Prediction</td>
+        <td>Status</td>
+      </tr>
+      <% @all_orders.each do |order| %>
+        <tr>
+          <td><%= order.food.name rescue "not available"%></td>
+          <td><%= order.quantity %></td>
+          <td><%= @food_hash[order.food_id]["cuurent_quantity"] rescue "not available" %></td>
+          <td><%= @food_hash[order.food_id]["prediction"] rescue "not available" %></td>
+          <!-- <td><%= link_to 'complete link', order_table_path(order) %></td> -->
+          <td><%= button_to "DONE", order_table_path(order),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-rounded btn-sm my-0" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% else %>
+    <h1>Please log in</h1>
+<% end %>
+

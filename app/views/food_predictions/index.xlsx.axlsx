@@ -1,0 +1,10 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Users") do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w(Food_name Prediction Quantity)
+
+  @all_food.each do |food|
+    sheet.add_row [@daily_prediction_matcher_report[food.id]["food_name"], @daily_prediction_matcher_report[food.id]["prediction"], @daily_prediction_matcher_report[food.id]["quantity"]]
+  end
+end

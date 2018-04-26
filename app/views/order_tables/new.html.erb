@@ -1,0 +1,16 @@
+<br>
+<hr>
+<%= form_with scope: :order_table, local: true do |form| %>
+  <p>
+    <%= form.label :food_number %><br>
+    <%= form.text_field :food_id %>
+  </p>
+  <p>
+    <%= form.label :quantity %><br>
+    <%= form.text_field :quantity %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
