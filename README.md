@@ -1,24 +1,29 @@
-# README
+Project Title:
+Food order management application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation steps:
+update your bundle, 
+install postgress, 
+and you are read to go
 
-Things you may want to cover:
+Uploaded on heroku:
+https://peaceful-shelf-58446.herokuapp.com/
 
-* Ruby version
+Features:
+User can update, edit or mark it done the the food order list, 
+User can predict the food sale for the day, 
+the resulting data of predicted and actual sales are downloaded on the xl-sheets
 
-* System dependencies
 
-* Configuration
+Built With :
+React.js with Ruby on rails - The web framework used, 
+ActionCable - Websockets for multiple user chat rooms
 
-* Database creation
+Versioning:
+rails- 4.2.0(or above), 
+ruby 2.4.0(or above)
 
-* Database initialization
+Author:
+Jalaj Chandnani
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
